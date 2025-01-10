@@ -1,7 +1,10 @@
 # Graph Embedded Subspace Clustering with Entropy-based Feature Weighting (GSCEFW)
-
 The manuscript of this work has been submitted to International Journal of Machine Learning and Cybernetics in Nov. 2024
 
+# Set up
+## Requirements
+All the experiments were conducted with 8 RAM, 64-bit Windows 10 and Inter Core i5 processor. 
+All the codes are implemented with MATLAB 2018a. 
 
 # Codes  
 
