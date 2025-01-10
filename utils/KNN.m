@@ -38,7 +38,7 @@ function rate = KNN(Train_data,Train_label,Test_data,Test_label,k,Distance_mark)
 % Systems for Video Technology (Accepted)
 % Jie Gui, Zhenan Sun, Wei Jia, Rongxiang Hu, Yingke Lei and Shuiwang Ji, "Discriminant
 % Sparse Neighborhood Preserving Embedding for Face Recognition", Pattern Recognition, 
-% vol. 45, no.8, pp. 2884¨C2893, 2012 (SCI, EI)
+% vol. 45, no.8, pp. 2884Â¨C2893, 2012 (SCI, EI)
 % Jie Gui, Wei Jia, Ling Zhu, Shuling Wang and Deshuang Huang, 
 % "Locality Preserving Discriminant Projections for Face and Palmprint Recognition," 
 % Neurocomputing, vol. 73, no.13-15, pp. 2696-2707, 2010
