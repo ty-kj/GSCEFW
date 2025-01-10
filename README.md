@@ -13,13 +13,13 @@ The manuscript of this work has been submitted to International Journal of Machi
 
 4.ConstructW.m  #The function of the graph construction algorithm.
 
-5.EuDist2.m #EuDist2 compute the Euclidean distance matrix。
+5.EuDist2.m #EuDist2 compute the Euclidean distance matrix.
 
-6. eig1.m #
+6. eig1.m # compute the eigenvalue and eigenvector.
 
 7. EProjSimplex_new.m #The function used to solve for S.
 
-8.L2_distance_1.m #Compute squared Euclidean distance
+8.L2_distance_1.m #Compute squared Euclidean distance.
 
 9.ClusteringMeasure.m #Compute the clustering performance of the algorithm based on K-means.
 
