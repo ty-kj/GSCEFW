@@ -8,7 +8,7 @@ All the experiments were conducted with 8 RAM, 64-bit Windows 10 and Inter Core 
 All the codes are implemented with MATLAB 2018a. 
 
 # Codes  
-1.demo_grid.m demo_once.m #The main functions.
+1.demo_once.m #The main functions.
 
 2.L2_distance_1.m  #Compute squared Euclidean distance
 
