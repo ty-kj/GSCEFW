@@ -26,6 +26,7 @@ All the codes are implemented with MATLAB 2018a.
 
 9.ClusteringMeasure.m #Compute the clustering performance of the algorithm based on K-means.
 
+10. /Ncut_9/ # The Normalized cut code can be obtained readily by searching it on Github.
 
 # Contact
 For any problem about this dataset or codes, please contact Dr. Jiang (jk_365@126.com).
