@@ -5,18 +5,13 @@ clear all
 clc
 clear memory;
 addpath(genpath('data4sc'));
-addpath(genpath('utils'));
 
-name = 'YaleB';
-name = 'ORL';
+% name = 'YaleB';
+% name = 'ORL';
 % name = 'COIL20';
-% name = 'COIL100';
-% name = 'MNIST_6996';
-% name = 'usps_random_1000';
-% name = '3ring_data';
+name = 'lung';
+
 load (name);
-% fea=X;
-% gnd=y;
 
 fea = fea';
 fea = fea./repmat(sqrt(sum(fea.^2)),[size(fea,1) 1]);
@@ -25,7 +20,7 @@ nnClass = length(unique(gnd));
 
 options = [];
 options.NeighborMode = 'KNN';
-options.k = 10;
+options.k = 5;
 options.WeightMode = 'HeatKernel';      % Binary  HeatKernel
 Z = constructW(fea',options);
 Z = full(Z);
@@ -37,25 +32,28 @@ LZ = DZ - Z;
 Z_ini = Z;
 clear LZ DZ Z Z1 options
 
-lambda1 = 0.010; lambda2 = 0.000100; lambda3 = 0.000010;
-% lambda1 = 0.000010; lambda2 = 0.100000; lambda3 = 1.000000;
+lambda1 = 10.000000; lambda2 = 0.000010; lambda3 = 0.000010;
+
+
 miu = 1e-3;
 rho = 1.1;
-% miu = 1.25;
-% rho = 1.15;
 max_iter = 20;
 % % if you only have cpu do this 
 Ctg = inv(fea'*fea+eye(size(fea,2)));
 % for max_iter=1:20
-for k=1:20
-    [Z,S,obj] = GERAFW(fea,F_ini,Z_ini,nnClass,lambda1,lambda2,lambda3,k,Ctg,miu,rho);
-    addpath('Ncut_9');
-    Z_out = Z;
-    A = Z_out;
-    A = A - diag(diag(A));
-    A = abs(A);
-    A = (A+A')/2;  
+tic;
 
+
+[Z,S,obj] = GSCEFW(fea,F_ini,Z_ini,nnClass,lambda1,lambda2,lambda3,max_iter,Ctg,miu,rho);
+
+addpath('Ncut_9');
+Z_out = Z;
+A = Z_out;
+A = A - diag(diag(A));
+A = abs(A);
+A = (A+A')/2;  
+
+for k=1:10
     [NcutDiscrete,NcutEigenvectors,NcutEigenvalues] = ncutW(A,nnClass);
     result_label = zeros(size(fea,2),1);%vec2ind
     for j = 1:nnClass
